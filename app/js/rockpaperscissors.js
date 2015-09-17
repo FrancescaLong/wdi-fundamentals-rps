@@ -87,13 +87,39 @@ function getComputerMove(move) {
     else winner = "there was a problem";
     return winner;
 }    
-getInput();
-randomPlay();
-getPlayerMove();
-getComputerMove();
-console.log(playerMove);
-console.log(computerMove);
-getWinner();
+
+
+function playToFive() {
+    console.log("Let\'s play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;
+    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
+    while (playerWins < 5 && computerWins < 5) {
+        getInput();
+        randomPlay();
+        getPlayerMove();
+        getComputerMove();
+        winner = getWinner();   
+        if (winner === "player") {
+            playerWins++;
+            console.log(playerMove);
+            console.log(computerMove);
+            console.log("winner is " + winner);
+        } else if (winner === "computer") {
+            computerWins++;
+            console.log(playerMove);
+            console.log(computerMove);
+            console.log("winner is " + winner);
+        } else if (winner === "tie") {
+            console.log(playerMove);
+            console.log(computerMove);
+            console.log("no one wins - it was a " + winner);
+        }
+    }
+    return [playerWins, computerWins];
+}
+
+playToFive();
 
 
 /*
@@ -102,29 +128,8 @@ getInput();
 randomPlay();
 getPlayerMove();
 getComputerMove();
+console.log(playerMove);
+console.log(computerMove);
 getWinner();
-
-
-function playToFive() {
-    console.log("Let\'s play Rock, Paper, Scissors");
-    var playerWins = 0;
-    var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    if winner = "player" {
-        playerWins++;
-    }
-    else if winner = "computer" {
-        computerWins++;
-    }
-    while (playerWins < 5 && computerWins < 5) {
-        getInput();
-        randomPlay();
-        getPlayerMove();
-        getComputerMove();
-        getWinner();   
-        }
-    else {
-        return [playerWins, computerWins];}
-    }
 
 */
